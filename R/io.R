@@ -33,7 +33,8 @@ get.inchi.key <- function(molecule) {
 }
 
 parse.inchi <- function(inchis) {
-  OKAY <- .jcall("net/sf/jniinchi/INCHI_RET", "Lnet/sf/jniinchi/INCHI_RET;", "getValue", as.integer(0))
+  #OKAY <- .jcall("net/sf/jniinchi/INCHI_RET", "Lnet/sf/jniinchi/INCHI_RET;", "getValue", as.integer(0))
+  OKAY <- J("net/sf/jniinchi/INCHI_RET")$OKAY
   dcob <- .jcall("org/openscience/cdk/DefaultChemObjectBuilder",
                  "Lorg/openscience/cdk/interfaces/IChemObjectBuilder;",
                  "getInstance")
